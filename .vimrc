@@ -50,6 +50,8 @@ set number
 " set relative line numbers
 set relativenumber
 
+" set spellcheck
+set spell
 
 " show file stats
 set ruler
