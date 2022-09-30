@@ -47,6 +47,10 @@ filetype plugin indent on
 " show line numbers
 set number
 
+" set relative line numbers
+set relativenumber
+
+
 " show file stats
 set ruler
 
