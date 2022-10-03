@@ -39,7 +39,7 @@ let &t_ZR="\e[23m"
 colorscheme gruvbox
 
 " turn on syntax highlighting
-syntax on
+syntax enable
 
 " load plugins correctly
 filetype plugin indent on
@@ -109,4 +109,8 @@ let g:vim_markdown_fenced_languages = ['C=c', 'python', 'java']
 " UNCOMMENT ONE OF THESE TWO BASED ON DESIRED USE
 let vim_markdown_preview_pandoc=1
 "let vim_markdown_preview_github=1
-let vim_markdown_preview_browser='Firefox'
+
+""" vimtex settings
+" use zathura as the viewer
+let g:vimtex_view_method='zathura'
+
