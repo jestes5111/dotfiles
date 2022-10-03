@@ -1,25 +1,24 @@
 """ Config settings
-" use Pathogen
+" Use Pathogen
 execute pathogen#infect()
 
-" use Powerline
+" Use Powerline
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 
-" no vi compatibility
+" No vi compatibility
 set nocompatible
 
-" help force plugins to load correctly
+" Help force plugins to load correctly
 filetype off
 
-" security
+" Security
 set modelines=0
 
-" set encoding
-set encoding=utf-8
+" Set encoding set encoding=utf-8
 
-" use 256 colors in terminal
+" Use 256 colors in terminal
 if !has("gui_running")
     set t_Co=256
     set term=screen-256color
@@ -27,39 +26,40 @@ endif
 
 
 """ Editor settings
-" set dark background
+" Set dark background
 set background=dark
 
-" use gruvbox text settings, make sure italics show up correctly
+" Use gruvbox text settings, make sure italics show up correctly
 let g:gruvbox_italic=1
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
-" set gruvbox as default colorscheme
+" Set gruvbox as default colorscheme
 colorscheme gruvbox
 
-" turn on syntax highlighting
+" Turn on syntax highlighting
 syntax enable
 
-" load plugins correctly
+" Load plugins correctly
 filetype plugin indent on
 
-" show line numbers
+" Show line numbers
 set number
 
-" set relative line numbers
+" Set relative line numbers
 set relativenumber
 
-" set spellcheck
-set spell
+" Set spellcheck using US English
+setlocal spell
+set spelllang=en_us
 
-" show file stats
+" Show file stats
 set ruler
 
-" blink instead of making noise
+" Blink instead of making noise
 set visualbell
 
-" whitespace
+" Whitespace
 set nowrap
 set textwidth=79
 set formatoptions=tcqrn1
@@ -68,36 +68,41 @@ set tabstop=4
 set expandtab
 set noshiftround
 
-" cursor motion
+" Cursor motion
 set scrolloff=3
 set backspace=indent,eol,start
 set matchpairs+=<:>
 
-" allow hidden buffers
+" Allow hidden buffers
 set hidden
 
-" rendering
+" Rendering
 set ttyfast
 
-" status bar
+" Status bar
 set laststatus=2
 
-" only show airline stuff 
+" Only show airline stuff 
 set noshowmode
 set showcmd
 
-" searching
+" Searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
 set showmatch
 
-" enable mouse support
+" Enable mouse support
 set mouse=a
 
-" use .markdown file syntax for .md files
+" Use .markdown file syntax for .md files
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+""" UltiSnips settings
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
 """ vim-markdown settings
 set conceallevel=2
@@ -111,6 +116,7 @@ let vim_markdown_preview_pandoc=1
 "let vim_markdown_preview_github=1
 
 """ vimtex settings
-" use zathura as the viewer
+let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
-
+let g:vimtex_quickfix_mode=0
+let g:tex_conceal='abdmg'
