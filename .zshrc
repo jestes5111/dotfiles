@@ -75,8 +75,6 @@ plugins=(
     git zsh-autosuggestions zsh-syntax-highlighting zsh-256color
 )
 
-# TODO: get powerline files on windows
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -106,25 +104,29 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Use Powerline
-. /home/jeste/anaconda3/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+export PATH=$PATH:$HOME/.local/bin
+powerline-daemon -q
+. ~/.local/lib/python3.9/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/jeste/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/jestes/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/jeste/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/jeste/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/jestes/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jestes/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/jeste/anaconda3/bin:$PATH"
+        export PATH="/home/jestes/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# aliases 
-alias pdf="evince"
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath+=$HOME/.zsh_functions
-alias dotfiles='/usr/bin/git --git-dir=/home/jeste/.dotfiles/ --work-tree=/home/jeste'
+
+# aliases 
+alias pdf='zathura'
+alias dotfiles='/usr/bin/git --git-dir=/home/jestes/.dotfiles/ --work-tree=/home/jestes'
+alias python='python3'

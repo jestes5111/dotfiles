@@ -3,6 +3,7 @@
 execute pathogen#infect()
 
 " Use Powerline
+let g:powerline_pycmd="py3"
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
@@ -100,9 +101,9 @@ set mouse=a
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 """ UltiSnips settings
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+"let g:UltiSnipsExpandTrigger='<tab>'
+"let g:UltiSnipsJumpForwardTrigger='<tab>'
+"let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
 """ vim-markdown settings
 set conceallevel=2
