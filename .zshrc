@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # Use Powerline
 export PATH=$PATH:$HOME/.local/bin
 powerline-daemon -q
-. ~/.local/lib/python3.9/site-packages/powerline/bindings/zsh/powerline.zsh
+. ~/.local/lib/python3.10/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
