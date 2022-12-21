@@ -79,8 +79,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -93,15 +91,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Use Powerline
 export PATH=$PATH:$HOME/.local/bin
@@ -126,7 +115,13 @@ unset __conda_setup
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath+=$HOME/.zsh_functions
 
-# aliases 
+# LaTeX stuff
+export PATH=:/usr/local/texlive/2022/bin/x86_64-linux:$PATH
+
+# Aliases 
 alias pdf='zathura'
 alias dotfiles='/usr/bin/git --git-dir=/home/jestes/.dotfiles/ --work-tree=/home/jestes'
 alias python='python3'
+
+# Remove padding from right side of terminal
+ZLE_RPROMPT_INDENT=0

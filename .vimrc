@@ -18,7 +18,8 @@ filetype off
 " Security
 set modelines=0
 
-" Set encoding set encoding=utf-8
+" Set encoding 
+set encoding=utf-8
 
 " Use 256 colors in terminal
 if !has("gui_running")
@@ -43,7 +44,8 @@ colorscheme gruvbox
 syntax enable
 
 " Load plugins correctly
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 
 " Show line numbers
 set number
@@ -58,15 +60,18 @@ set spelllang=en_us
 " Show file stats
 set ruler
 
+" Line at column 80
+set colorcolumn=80
+
 " Blink instead of making noise
 set visualbell
 
 " Whitespace
-set nowrap
+"set nowrap
 set textwidth=79
 set formatoptions=tcqrn1
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set expandtab
 set noshiftround
 
