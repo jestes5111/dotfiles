@@ -1,4 +1,4 @@
-""" Config settings
+" Config settings
 " Use Pathogen
 execute pathogen#infect()
 
@@ -28,7 +28,7 @@ if !has("gui_running")
 endif
 
 
-""" Editor settings
+" Editor settings
 " Set dark background
 set background=dark
 
@@ -72,6 +72,7 @@ set textwidth=79
 set formatoptions=tcqrn1
 set shiftwidth=2
 set tabstop=2
+set softtabstop=2
 set expandtab
 set noshiftround
 
@@ -106,23 +107,23 @@ set mouse=a
 " Use .markdown file syntax for .md files
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
-""" UltiSnips settings
+" UltiSnips settings
 "let g:UltiSnipsExpandTrigger='<tab>'
 "let g:UltiSnipsJumpForwardTrigger='<tab>'
 "let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-""" vim-markdown settings
+" vim-markdown settings
 set conceallevel=2
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_math = 1
 let g:vim_markdown_fenced_languages = ['C=c', 'python', 'java']
 
-""" vim-markdown-preview settings
+" vim-markdown-preview settings
 " UNCOMMENT ONE OF THESE TWO BASED ON DESIRED USE
 let vim_markdown_preview_pandoc=1
 "let vim_markdown_preview_github=1
 
-""" vimtex settings
+" vimtex settings
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
