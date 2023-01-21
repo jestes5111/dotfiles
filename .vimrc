@@ -9,6 +9,26 @@ python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 
+" Use .markdown file syntax for .md files
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
+" vim-markdown settings
+set conceallevel=2
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_math = 1
+let g:vim_markdown_fenced_languages = ['C=c', 'python', 'java']
+
+" vim-markdown-preview settings
+" UNCOMMENT ONE OF THESE TWO BASED ON DESIRED USE
+let vim_markdown_preview_pandoc=1
+"let vim_markdown_preview_github=1
+
+" vimtex settings
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+let g:tex_conceal='abdmg'
+
 " No vi compatibility
 set nocompatible
 
@@ -104,27 +124,10 @@ set showmatch
 " Enable mouse support
 set mouse=a
 
-" Use .markdown file syntax for .md files
-autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+" Keybinds
+" Use space as leader, make sure it does nothing else
+nnoremap <Space> <Nop>
+let mapleader = " "
 
-" UltiSnips settings
-"let g:UltiSnipsExpandTrigger='<tab>'
-"let g:UltiSnipsJumpForwardTrigger='<tab>'
-"let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-
-" vim-markdown settings
-set conceallevel=2
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_math = 1
-let g:vim_markdown_fenced_languages = ['C=c', 'python', 'java']
-
-" vim-markdown-preview settings
-" UNCOMMENT ONE OF THESE TWO BASED ON DESIRED USE
-let vim_markdown_preview_pandoc=1
-"let vim_markdown_preview_github=1
-
-" vimtex settings
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-let g:tex_conceal='abdmg'
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
